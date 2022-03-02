@@ -8,7 +8,7 @@ set encoding=utf-8
 set hidden
 
 "------------------------------------------------------
-"kep-mapping for using vim efficiently
+"key-mapping for using vim efficiently
 "------------------------------------------------------
 "
 noremap j h
@@ -19,6 +19,10 @@ noremap K o
 noremap I O
 noremap J I
 noremap L A
+
+"remap keys to save files 
+noremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
 
 "------------------------------------------------------
 "vim-plug
@@ -97,4 +101,19 @@ set background=dark
 
 colorscheme OceanicNext
 
+"------------------------------------------------------
+"nerdtree configuration
+"------------------------------------------------------
+"https://github.com/preservim/nerdtree
 "
+"remap keys to open and use nerd tree.
+nnoremap tt :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"remapping '' to open split then key 'i' can be 'go up'
+let NERDTreeMapOpenSplit = '' 
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
