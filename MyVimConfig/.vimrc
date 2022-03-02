@@ -1,4 +1,4 @@
-
+set nu
 set clipboard=unnamedplus
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -39,6 +39,9 @@ Plug 'vim-scripts/The-NERD-tree'
 
 Plug 'vim-airline/vim-airline'
 
+"markdown
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+
 "color theme---
 "Plug 'rainglow/vim'
 "Plug 'morhetz/gruvbox'
@@ -71,6 +74,7 @@ inoremap <silent><expr> <Tab>
 "------------------------------------------------------
 "
 set background=dark
+
 
 "------------------------------------------------------
 "rainglow configuration
@@ -117,3 +121,19 @@ let NERDTreeMapOpenSplit = ''
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+"------------------------------------------------------
+"vim-instant-markdown configuration
+"------------------------------------------------------
+"https://github.com/instant-markdown/vim-instant-markdown
+"execute :help vim-instant-markdown-configuration to read more about what the different configuration options imply.
+filetype plugin on
+"auto start preview when open .md file.
+let g:instant_markdown_autostart = 1 
+noremap mk :InstantMarkdownPreview<CR>
+noremap mq :InstantMarkdownStop<CR>
+
+
+"
+"
+"
