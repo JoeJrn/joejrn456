@@ -47,6 +47,9 @@ Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn in
 "Plug 'morhetz/gruvbox'
 "Plug 'flazz/vim-colorschemes'
 Plug 'mhartington/oceanic-next'
+			\
+"template
+Plug 'aperezdc/vim-template'
 
 call plug#end()
 
@@ -133,6 +136,11 @@ let g:instant_markdown_autostart = 1
 noremap mk :InstantMarkdownPreview<CR>
 noremap mq :InstantMarkdownStop<CR>
 
+
+"------------------------------------------------------
+"vim-template configuration
+"------------------------------------------------------
+"https://github.com/aperezdc/vim-template
 
 "
 "
