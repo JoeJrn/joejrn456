@@ -6,6 +6,22 @@ set encoding=utf-8
 
 " TextEdit might fail if hidden is not set.
 set hidden
+let mapleader=" "
+
+set relativenumber
+set cursorline
+set wrap
+set showcmd
+
+"search
+set hlsearch
+set incsearch
+exec "nohlsearch"
+set ignorecase
+set smartcase
+noremap = nzz
+noremap - Nzz
+noremap <LEADER><CR> :nohlsearch<CR>
 
 "------------------------------------------------------
 "key-mapping for using vim efficiently
@@ -21,8 +37,11 @@ noremap J I
 noremap L A
 
 "remap keys to save files 
-noremap <C-s> :w<CR>
-inoremap <C-s> <ESC>:w<CR>
+map S :w<CR>
+map s <nop>
+
+map R :source $MYVIMRC<CR>
+
 
 "------------------------------------------------------
 "vim-plug
